@@ -16,7 +16,7 @@ poet.createPostRoute('/public/post/:post', 'post')
     
 app.set 'view engine', 'jade'
 app.set 'views', __dirname + '/views'
-app.use express.static(__dirname + '/public')
+app.use '/public', express.static(__dirname + '/public')
 app.use app.router
 
 app.get '/public', (req, res) -> res.render('index')
